@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %} - Daily Journal</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <header class="bg-dark text-white py-3">
+            <div class="container">
+                <h1>Daily Journal</h1>
+                <nav class="nav">
+                    <a class="nav-link text-white" href="{{ url_for('entries.home') }}">Home</a>
+                    <a class="nav-link text-white" href="{{ url_for('entries.add') }}">Add Entry</a>
+                </nav>
+            </div>
+        </header>
+        <main class="container my-4">
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
